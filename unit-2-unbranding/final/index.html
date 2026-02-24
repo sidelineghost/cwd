@@ -4,12 +4,53 @@
 
 	<!--
 	About this page:
-
+	I wasn't really sure where to go for this assignment, but I wanted to
+	reinterpret Ring's happy ish tone on their website to align with the
+	severity of their surveillance. As you hover over the text and logo,
+	the words change from what is actually found on the site to what can be
+	interpreted from it. I really just wanted to see what I could do with
+	javascript. The text and images change on hover, the buttons change and
+	change back on click, and the search image in the top right will freeze
+	the screen in unbranded mode for better readability. I wish I had picked
+	a different part of the website for this, as it is a little bit boring to
+	look at. I think I got pretty close to the actual website though, I'm
+	pretty proud of it. The logo comes from my Figma design, the search image
+	from the site itself, and most of the code comes from w3schools or me googling
+	how to ___ javascript (I needed help with the getElementById stuff. Savannah
+	also helped, specifically with the meta button and boolean variables that
+	let me change the buttons on click. Hope you like it!
 	-->
 	<title>Unbranding</title>
 	<style>
 		body {
-
+			font-family:"Verdana", sans-serif;
+			margin:0;
+			padding:0;
+			background-color:#F6F8FA;
+			border-collapse:collapse;
+		}
+		div {
+			text-align:center;
+			width:100%;
+		}
+		button {
+			text-align:center;
+			padding:15px 30px;
+			border-radius:10px;
+			font-size:100%;
+			font-weight:600;
+			border:2px solid black;
+			margin:0 5px 0;
+		}
+		.whitebar {
+			width:100%;
+			background-color:#FFFFFF;
+			padding:5px;
+			vertical-align:center;
+		}
+		.whitebar button {
+			float:right;
+			vertical-align:center;
 		}
 		#banner {
 			width:cover;
@@ -17,24 +58,37 @@
 			text-align:center;
 			padding:20px;
 			color:white;
-			font-size:18px;
+			font-size:15px;
+			margin:0;
 		}
 		#headline {
+			width:cover;
+			background-color:#F6F8FA;
+			font-family:"Calibri";
+			font-style:none;
 			text-align:center;
-			font-size:60px;
-			margin: 100px 20% 0;
+			font-size:50px;
+			margin: 70px 30% 0;
+		}
+		#hldesc {
+			color:#404040;
+			line-height:1.5;
+			text-align:center;
+			margin:20px 24% 30px;
+			font-size:125%;
 		}
 		.header a {
+			font-family:"Tahoma";
 			float:left;
-			font-size:130%;
+			font-size:90%;
 			text-align:center;
 			border-radius:4px;
-			padding:12px;
+			padding:15px 25px 0px;
 		}
 		.header a:hover {
 			text-decoration:underline;
 		}
-		.header-right {
+		#header-right {
 			float:right;
 		}
 		#logo {
@@ -43,15 +97,29 @@
 			width:80px;
 			height:49px;
 			margin-right:30px;
-			margin-left:10px;
+			margin-left:30px;
 		}
-		#logo:hover {
-			float:left;
-			background-image:url(assets/unbrandlogo.png);
-			width:80px;
+		#search {
+			float:right;
+			background-image:url(assets/search.png);
+			width:137px;
 			height:49px;
-			margin-right:30px;
-			margin-left:10px;
+			margin: 0 30px 0 10px;
+		}
+		.black {
+			background-color:black;
+			color:white;
+		}
+		.white {
+			background-color: white;
+			width:200px;
+		}
+		#cookies {
+			float:left;
+			vertical-align:center;
+		}
+		.margin {
+			margin-bottom:30px;
 		}
 
 	</style>
@@ -61,25 +129,46 @@
 
  <p id="banner" onmouseover="unbrand('banner')" onmouseout="brand('banner')"> Free shipping and free returns on US orders. Shop now.</p>
  
+ <table class=whitebar>
+ 	<tr><td>
 <div class=header>
-	<div id=logo></div>
+	<div id=logo onmouseover="imageunbrand('logo')" onmouseout="imagebrand('logo')"></div>
 	<a>Products</a>
 	<a>Bundles</a>
 	<a>Plans</a>
 	<a>Services</a>
 	<a>Neighbors</a>
 	<a>Business</a>
-</div>
-
-
-
- <!-- <div id="logobar"></div> -->
+	<div id=search onclick="metaUnbrand()"></div>
+	<a id=header-right>Sign in</a>
+</div></td></tr></table>
 
  <h1 id="headline" onmouseover="unbrand('headline')" onmouseout="brand('headline')">The latest innovations from Ring are here.</h1>
+<p id=hldesc onmouseover="unbrand('hldesc')" onmouseout="brand('hldesc')">Get ready for seamless 4K panorama views, new AI technology to help outdoor cameras spot fires, alarms that don’t play by the old rules, and more.</p>
+
+<div class=margin>
+	<button class=black id=money onclick="buttonbrand('money')">Shop Now</button>
+	<button class=black id=time onclick="buttonbrand('time')">Learn More</button>
+</div>
+
+<table class=whitebar><tr><td width=55%>
+	<p id=cookies onmouseover="unbrand('cookies')" onmouseout="brand('cookies')">This site uses cookies for marketing and analytics pursuant to our Privacy Notice. By continuing to browse this site, you agree to the placement of such cookies.</p></td>
+	<td><button class=black id=nocookie onclick="buttonbrand('nocookie')">Got it</button>
+		<button class=white id=yescookie onclick="buttonbrand('yescookie')">Manage Settings</button>
+</td></tr></table>
 
 <script>
+
+let metaON = false
+let moneyBrand = true
+let timeBrand = true
+let yesBrand = true
+let noBrand = true
 var brandText 
 var unbrandText
+var buttonText
+var brandurl
+var unbrandurl
 
 function unbrand(a) {
 	if (a == 'banner') {
@@ -88,24 +177,147 @@ function unbrand(a) {
 	else if (a == 'headline') {
 		unbrandText = "The latest surveillance methods have arrived.";
 		}
+	else if (a == 'hldesc') {
+		unbrandText = "Prepare yourself for eyes that are better than yours in every way. 4K panoramic vision, AI technology, and more will help us keep an eye on everything for you. Easily.";
+	}
+	else if (a == 'money') {
+		unbrandText = "Take my money";
+	}
+	else if (a == 'time') {
+		unbrandText = "Take my time";
+	}
+	else if (a == 'cookies') {
+		unbrandText = "We are already stalking you with this site as well, in order to tell exactly how to make you buy our product or others. It’s too late, you’ve already agreed."
+	}
+	else if (a == 'yescookie') {
+		unbrandText = "I want to pretend I have control over this"
+	}
+	else if (a == 'nocookie') {
+		unbrandText = "I don't care"
+	}
 	else {unbrandText = "Nope.";};
 	document.getElementById(a).innerText = unbrandText;
 }
 
 function brand(a) {
-	if (a == 'banner') {
-		brandText = "Free shipping and free returns on US orders. Shop now.";
+	if (metaON == false) {
+		if (a == 'banner') {
+			brandText = "Free shipping and free returns on US orders. Shop now.";
+			}
+		else if (a == 'headline') {
+			brandText = "The latest innovations from Ring are here.";
+			}
+		else if (a == 'hldesc') {
+			brandText = "Get ready for seamless 4K panorama views, new AI technology to help outdoor cameras spot fires, alarms that don’t play by the old rules, and more.";
 		}
-	else if (a == 'headline') {
-		brandText = "The latest innovations from Ring are here.";
+		else if (a == 'money') {
+			brandText = "Shop Now";
 		}
-	else {brandText = "Nope.";};
-	document.getElementById(a).innerText = brandText;
+		else if (a == 'time') {
+			brandText = "Learn More";
+		}
+		else if (a == 'cookies') {
+			brandText = "This site uses cookies for marketing and analytics pursuant to our Privacy Notice. By continuing to browse this site, you agree to the placement of such cookies.";
+		}
+		else if (a == 'yescookie') {
+			brandText = "Manage Settings"
+		}
+		else if (a == 'nocookie') {
+			brandText = "Got it"
+		}
+		else {brandText = "Nope.";};
+		document.getElementById(a).innerText = brandText;
+	}
+	else {console.log("meta on")}
+}
+
+function buttonbrand(a) {
+	if (a == 'money') {
+		if (moneyBrand == true) {
+			unbrand('money')
+			moneyBrand = false
+		}
+		else {
+			brand('money')
+			moneyBrand = true
+		}
+	}
+	else if (a == 'time') {
+		if (timeBrand == true) {
+			unbrand('time')
+			timeBrand = false;
+		}
+		else {
+			brand('time')
+			timeBrand = true
+		}
+	}
+	else if (a == 'yescookie') {
+		if (yesBrand == true) {
+			unbrand('yescookie');
+			yesBrand = false
+		}
+		else {
+			brand('yescookie');
+			yesBrand = true
+		}
+	}
+	else if (a == 'nocookie') {
+		if (noBrand == true) {
+			unbrand('nocookie');
+			noBrand = false
+		}
+		else {
+			brand('nocookie');
+			noBrand = true
+		}
+	}
 }
 
 
+function imagebrand(a) {
+	if (metaON == false) {
+		if (a == 'logo') {
+			brandurl = "assets/brandlogo.png"
+		}
+		document.getElementById(a).style.backgroundImage = "url('" + brandurl + "')"
+	}
+	else {console.log("meta on")}
+}
+
+function imageunbrand(a) {
+	if (a == 'logo')
+		unbrandurl = "assets/unbrandlogo.png"
+	document.getElementById(a).style.backgroundImage = "url('" + unbrandurl + "')"
+}
+
+function metaUnbrand() {
+	if (metaON == false) {
+		metaON = true;
+		unbrand('banner');
+		unbrand('headline');
+		unbrand('hldesc');
+		unbrand('money');
+		unbrand('time');
+		unbrand('cookies');
+		unbrand('yescookie');
+		unbrand('nocookie');
+		imageunbrand('logo');
+	}
+	else {
+		metaON = false
+		brand('banner');
+		brand('headline');
+		brand('hldesc');
+		brand('money');
+		brand('time');
+		brand('cookies');
+		brand('yescookie');
+		brand('nocookie');
+		imagebrand('logo');
+	}
+}
+
 </script>
-
-
 </body>
 </html>
