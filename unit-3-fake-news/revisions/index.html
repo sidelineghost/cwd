@@ -2,19 +2,227 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- 
 	About this page:
-
-
+	First Light Bulletin is a fake good-news bulletin related to
+	events and opinions throughout this fantasy world I created
+	for a D&D campaign. We haven't had many adventures in that
+	campaign yet (Savannah is in it actually) but a few of the
+	headlines reflect things related to them and their travels,
+	while others were fun things I came up with when deciding
+	what would make the news in a fantasy setting. I'm gonna be
+	honest I went with what would be easiest to do in terms of
+	layout of the page, since Bootstrap is new to me and also
+	not as well documented as base HTML (for understandable 
+	reasons). I almost certainly didn't do anything the proper
+	way. I nested so many grids for the left panel, and I ended
+	up having to straight up copy from one of the examples for
+	my sub-heading links (a scrollable nav bar is epic though).
+	Overall, it looks cool and it does adapt to different screen
+	sizes so I think I completed my goal, as best as I could this
+	time. I would have liked a bit more Bootstrap material in
+	class.
 	-->
-	<title>Fake News</title>
 	
-  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<title>Fake News</title>
+		<link href='https://fonts.googleapis.com/css?family=Baskervville' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=IM Fell Double Pica SC' rel='stylesheet'>
+	<style>
+		div {padding:5px}
+		p {font-family:"Baskervville"; font-size:90%;}
+		a {font-size:150%}
+		a:link {color:black; text-decoration:none}
+		a:hover {text-decoration:underline}
+		a:visited {color:grey}
+		figcaption {font-family:"Baskervville"; font-size:60%;}
+
+		h1, h2, h3, h4, h5, h6, .display-1, a {font-family:"IM Fell Double Pica SC"}
+		h5:hover h6:hover {text-decoration:underline}
+
+		.nav-scroller {
+  			position:relative;
+ 		 	z-index:2;
+  			height:2.75rem;
+  			overflow-y:hidden
+		}
+		.nav-scroller .nav {
+  			display:flex;
+  			flex-wrap:nowrap;
+  padding-bottom:1rem;
+  margin-top:-1px;
+  overflow-x:auto;
+  text-align:center;
+  white-space:nowrap;
+  -webkit-overflow-scrolling:touch
+}
+	</style>
+
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<h1>Hello, world!</h1>
+	<div class="text-center">
+		<div class="row justify-content-center">
+			<div class="col-1">
+				<img src="../images/gem.png" class="img-fluid">
+			</div>
+			<div class="col-8">
+				<p class="display-1 text-decoration-underline">First Light Bulletin</p>
+			</div>
+			<div class="col-1">
+				<img src="../images/gem.png" class="img-fluid">
+			</div>
+		</div>
+
+		<div class="nav-scroller py-1 mb-3 border-bottom">
+			<nav class="nav justify-content-between">
+			<a class="nav-link" href="">Snacks</a>
+			<a class="nav-link" href="">Games</a>
+			<a class="nav-link" href="">Culture</a>
+			<a class="nav-link" href="">Magic</a>
+			<a class="nav-link" href="">People</a>
+			<a class="nav-link" href="">Places</a>
+			<a class="nav-link" href="">Breaking</a>
+			<a class="nav-link" href="">Weather</a></nav></div>
+
+		<!-- <div class="row justify-content-center">
+			<div class="col-1"><a href="">Snacks</a></div>
+			<div class="col-1"><a href="">Games</a></div>
+			<div class="col-1"><a href="">Culture</a></div>
+			<div class="col-1"><a href="">Magic</a></div>
+			<div class="col-1"><a href="">People</a></div>
+			<div class="w-100 d-lg-none"></div>
+			<div class="col-1"><a href="">Places</a></div>
+			<div class="col-1"><a href="">Breaking</a></div>
+			<div class="col-1"><a href="">Weather</a></div>
+			<div class="col-1"><a href="">About Us</a></div>
+			<div class="col-1"><a href="">Contact</a></div>
+		</div> -->
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col">
+						<div class="row">
+							<figure class="col-lg">
+								<img src="../images/invention.jpg" class="img-fluid" alt="brass telescope">
+								<figcaption>Image by Iris Yan, Unsplash</figcaption>
+							</figure>
+							<div class="col">
+								<h6>Top 10 Inventions from Flux Academy Season 463, Ranked</h6></div>	
+							</div>
+						</div>
+						<div class="col">
+							<div class="row">
+							<figure class="col-lg">
+								<img src="../images/potion.jpg" class="img-fluid" alt="red health potion">
+								<figcaption>Image by Nastia Petruk, Unsplash</figcaption>
+							</figure>
+							<div class="col">
+								<h6>Health Potion Efficiency Raised 2% in New Study</h6>
+							</div>	
+						</div>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="row">
+						<figure class="col-lg">
+								<img src="../images/oracle.jpg" class="img-fluid" alt="ancient book">
+								<figcaption>Image by Tanner Mardis, Unsplash</figcaption>
+							</figure>
+						<div class="col">
+							<h6>Next "Chosen One" Found? Diviners Optimistic</h6>
+						</div>	
+						</div>	
+					</div>
+					<div class="col">
+						<div class="row">
+						<figure class="col-lg">
+								<img src="../images/dog.jpg" class="img-fluid" alt="adorable dog">
+								<figcaption>Image by Rafaella Waasdorp, Unsplash</figcaption>
+							</figure>
+						<div class="col">
+							<h6>Why Dogs Make the Best Starter Familiars</h6>
+						</div>	
+						</div>	
+					</div>
+				</div>
+				<div class="d-none d-lg-block row border-top">
+					<div class="col">
+						<h5>Town Shop Owner Saved from Arsonist Dragonborn Group</h5>
+						<p>All suspects captured in fiery duel with druidic counsel. Investigation ongoing.</p>
+					</div>
+					<div class="col">
+						<h5>Knick & Knack's Updated Contract Provides Worker's Rights Improvements</h5>
+						<p>The update requires sick leave and compensation for any chaotic accidents, spokesperson says.</p>	
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+				<h5 class="text-center">Northwestern Merfolk Alliance Treaty: Live Updates</h5>
+					<figure>
+						<img src="../images/mermaid.png" class="img-fluid" alt="paused video of ocean">
+						<figcaption>Image by Joseph Barrientos, Unsplash. Framed in Canva.</figcaption>
+					</figure>
+				</div>
+				<div class="row border-top d-lg-none">
+					<div class="col">
+						<h5>Town Shop Owner Saved from Arsonist Dragonborn Group</h5>
+						<p>All suspects captured in fiery duel with druidic counsel. Investigation ongoing.</p>
+					</div>
+					<div class="col">
+						<h5>Knick & Knack's Updated Contract Provides Worker's Rights Improvements</h5>
+						<p>The update requires sick leave and compensation for any chaotic accidents, spokesperson says.</p>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+<hr>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-3">
+		<figure>
+ 			<img src="../images/egg.png" class="img-fluid col-8" alt="Blue stylized egg">
+  			<figcaption>Image from rawpixel, edited in Figma</figcaption>
+		</figure>
+		<h6>Mystery Bird Soon to Hatch</h6>
+		<p>An egg unlike any seen before is expected to hatch within the week, providing new avenues of avian research</p>
+	</div>
+	<div class="col-sm-3">
+		<figure>
+ 			<img src="../images/armor.jpg" class="img-fluid col-8" alt="medieval armor sitting at a table">
+  			<figcaption>Image by Pascal Bernardon, Unsplash </figcaption>
+		</figure>
+		<h6>Animated Armor Included in Sentient-Nonliving Rights Decision</h6>
+		<p>Armor constructs granted legal protections in victory over decades-long struggle for recognition</p>
+	</div>
+	<div class="col-sm-3">
+		<figure>
+ 			<img src="../images/trek.jpg" class="img-fluid col-8" alt="Ship sailing in the sunset">
+  			<figcaption>Image by Katherine McCormack, Unsplash</figcaption>
+		</figure>
+		<h6>TREK Organization Returns To Waters</h6>
+		<p>The peacekeeping and exploration group returns after accusations of bias and injustice</p>
+	</div>
+	<div class="col-sm-3">
+		<figure>
+ 			<img src="../images/cat.jpg" class="img-fluid col-8" alt="Black cat">
+  			<figcaption>Image by Lorenzo Hamers, Unsplash</figcaption>
+		</figure>
+		<h6>Displacer Beast Scare Revealed to be Ordinary Housecat</h6>
+		<p>Spangles the cat, who had been lost for two months, described as “public menace” by Havensfield community</p>
+	</div>
+</div>
+</div>
+
+
 </body>
 </html>
