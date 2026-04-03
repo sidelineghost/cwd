@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- 
+	About this page:
+	There isn't too much to be said about creative choices. I was originally 
+	(analog mockup) going to swap the tasks and the form but this layout makes
+	far more sense space wise. I did have to include some scrolling to fit the
+	screenshots. For better visuals I made the even form questions grey, it
+	looks better, and I had to fight to get the inputs in line with their labels.
+	Code for the form came from in class and your example when I got stuck,
+	code for everything else was preexisting knowledge. Never seen a usability
+	report before this class so I hope it looks alright
+	-->
+
+	<title>Usability Report: Internet Archive</title>
+	
+	<style>
+		h1 {text-align:center; width:device-width; padding-bottom:10px}
+		embed {width:100%; height:35rem;}
+		input {margin-top:8px !important}
+		label {font-size:90%; font-family:serif}
+		button {margin:6px !important}
+		.img {width:100%; height:auto;}
+		.grey {background-color:lightgrey}
+		.t {height:50px; vertical-align:center}
+
+	</style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	
+</head>
+<body>
+	<h1 class="display-3">Usability Report: Internet Archive</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<embed src="https://archive.org/">
+				</div>
+				<div class="col-lg-4">
+					<p><b>System Usability Scale:</b><br><i>On a scale of 1 (Completely disagree) to 5 (Completely agree), how much do you agree with each statement listed?</i></p>
+					<form action="#" id="sus">
+						<div class="row t">
+							<div class="col-10"><label for="n1">I think that I would like to use this system frequently.</label></div>
+							<div class="col-2"><input type="number" id="n1" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t grey">
+							<div class="col-10"><label for="n2">I found the system unnecessarily complex.</label></div>
+							<div class="col-2"><input type="number" id="n2" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t">
+							<div class="col-10"><label for="n3">I thought the system was easy to use.</label></div>
+							<div class="col-2"><input type="number" id="n3" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t grey">
+							<div class="col-10"><label for="n4">I think that I would need the support of a technical person to be able to use this system.</label></div>
+							<div class="col-2"><input type="number" id="n4" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t">
+							<div class="col-10"><label for="n5">I found the various functions in this system were well integrated.</label></div>
+							<div class="col-2"><input type="number" id="n5" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t grey">
+							<div class="col-10"><label for="n6">I thought there was too much inconsistency in this system.</label></div>
+							<div class="col-2"><input type="number" id="n6" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t">
+							<div class="col-10"><label for="n7">I would imagine that most people would learn to use this system very quickly.</label></div>
+							<div class="col-2"><input type="number" id="n7" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t grey">
+							<div class="col-10"><label for="n8">I found the system very cumbersome to use.</label></div>
+							<div class="col-2"><input type="number" id="n8" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t">
+							<div class="col-10"><label for="n9">I felt very confident using the system.</label></div>
+							<div class="col-2"><input type="number" id="n9" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row t grey">
+							<div class="col-10"><label for="n0">I needed to learn a lot of things before I could get going with this system.</label></div>
+							<div class="col-2"><input type="number" id="n0" min="1" max="5" value="3" required></div>
+						</div>
+						<div class="row">
+							<div class="col-6"><button type="submit">Submit</button></div>
+							<div class="col-3"><p>Score:</p></div>
+							<div class="col-3"><input id="answer" style="width:5rem"></div>
+						</div>
+					</form>
+
+					<script src="../assets/hello.js"></script>
+				</div>
+			</div>
+		</div>
+<hr>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-4">
+							<image class="img" src="../assets/wayback.png" alt="umw.edu on the wayback machine"></image>
+						</div>
+						<div class="col-8">
+							<h4>Task 1: The Old UMW Site</h4>
+							<p>Time - 2:19<br>We asked our testers to locate the old UMW site on the Wayback Machine. They typed the web address for UMW in the Wayback Machine search bar, then navigating to an early capture. One could not, and the other had trouble with the web address. That tester recovered and completed the task.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-4">
+							<image class="img" src="../assets/mario.png" alt="mario bros 3 software on archive.org"></image>
+						</div>
+						<div class="col-8">
+							<h4>Task 2: Super Mario Bros 3</h4>
+							<p>Time - 1:11, 6:03<br>Their goal was to reach an emulator of Super Mario Bros, 3. Our testers browsed via the home search bar or the specific software search. They had issues with different software libraries and unplayable versions of the game.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-4">
+							<image class="img" src="../assets/sitecount.png" alt="screenshot of the web page count on archive.org"></image>
+						</div>
+						<div class="col-8">
+							<h4>Task 3: How Many Websites</h4>
+							<p>Time - 0:05, 0:13<br>Their goal was to find out how many websites the archive has. We did not realize the answer could easily be found on the homepage. Our testers pointed out our mistake.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-4">
+							<image class="img" src="../assets/donation.png" alt="donation page for archive.org"></image>
+						</div>
+						<div class="col-8">
+							<h4>Task 4: Donation Tax Deductibility</h4>
+							<p>Time - 0:44, 1:16<br>We asked our testers to figure out if donations to the archive were tax-deductible. They originally went to the donate page, then restarted to follow a path through help to the donation FAQs. Both testers missed the final sentence on the donation page clarifying tax deductibility.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-4">
+							<image class="img" src="../assets/events.png" alt="events portion of the Internet Archive blog"></image>
+						</div>
+						<div class="col-8">
+							<h4>Task 5: Upcoming Events</h4>
+							<p>Time - 1:56, 1:14<br>We prompted for the Internet Archive event closest to our graduation day, May 9th. They each located the events tab after thoroughly scanning the homepage and scrolled to the event on April 22nd. Mistakes were made with the event page itself or going on a diversion with the Wayback Machine. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
