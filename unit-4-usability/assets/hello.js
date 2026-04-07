@@ -31,9 +31,4 @@ n0 = 5-n0
 
 let ans = (n1+n2+n3+n4+n5+n6+n7+n8+n9+n0)*2.5
 
-this.answer.value = ans
-
-
-	// console.log("it worked");
-	console.log(this.answer.value);
 });
