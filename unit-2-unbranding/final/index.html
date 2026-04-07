@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 
 	<!--
@@ -53,7 +53,6 @@
 			vertical-align:center;
 		}
 		#banner {
-			width:cover;
 			background-color:#007BC2;
 			text-align:center;
 			padding:20px;
@@ -62,10 +61,9 @@
 			margin:0;
 		}
 		#headline {
-			width:cover;
 			background-color:#F6F8FA;
 			font-family:"Calibri";
-			font-style:none;
+			font-style:normal;
 			text-align:center;
 			font-size:50px;
 			margin: 70px 30% 0;
@@ -121,6 +119,9 @@
 		.margin {
 			margin-bottom:30px;
 		}
+		.w55 {
+			width:55%;
+		}
 
 	</style>
 	
@@ -151,7 +152,7 @@
 	<button class=black id=time onclick="buttonbrand('time')">Learn More</button>
 </div>
 
-<table class=whitebar><tr><td width=55%>
+<table class=whitebar><tr><td class="w55">
 	<p id=cookies onmouseover="unbrand('cookies')" onmouseout="brand('cookies')">This site uses cookies for marketing and analytics pursuant to our Privacy Notice. By continuing to browse this site, you agree to the placement of such cookies.</p></td>
 	<td><button class=black id=nocookie onclick="buttonbrand('nocookie')">Got it</button>
 		<button class=white id=yescookie onclick="buttonbrand('yescookie')">Manage Settings</button>
